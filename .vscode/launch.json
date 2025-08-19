@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GestionarprestamogrupodevApplication<gestionarprestamogrupodev>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "edu.pe.zegel.gestionarprestamogrupodev.GestionarprestamogrupodevApplication",
+            "projectName": "gestionarprestamogrupodev",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

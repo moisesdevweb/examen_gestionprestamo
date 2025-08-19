@@ -1,0 +1,46 @@
+version: '3.8'
+services:
+  springboot-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gestionarprestamo-app
+    ports:
+      - "9091:9091"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://gestionarprestamo-db:3306/gestionarprestamo?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: yusepidev
+      SPRING_DATASOURCE_PASSWORD: Mysql@@1821
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_DATABASE: mysql
+    depends_on:
+      - mysql-db
+    networks:
+      - app-network
+  #Servicios para mysql
+  mysql-db:
+    image: mysql:8.0
+    container_name: gestionarprestamo-db
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Mysql@@1821
+      MYSQL_DATABASE: gestionarprestamo
+      MYSQL_USER: yusepidev
+      MYSQL_PASSWORD: Mysql@@1821
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pMysql@@1821"]
+      interval: 15s
+      retries: 10
+      timeout: 10s
+    networks:
+      - app-network
+
+volumes:
+  mysql_data:
+
+networks:
+  app-network:
+    driver: bridge

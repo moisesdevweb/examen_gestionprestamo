@@ -1,0 +1,8 @@
+edu\pe\zegel\gestionarprestamogrupodev\model\entity\Alumno.class
+edu\pe\zegel\gestionarprestamogrupodev\GestionarprestamogrupodevApplication.class
+edu\pe\zegel\gestionarprestamogrupodev\controller\PrestamoController$PrestamoRequest.class
+edu\pe\zegel\gestionarprestamogrupodev\model\entity\Prestamo.class
+edu\pe\zegel\gestionarprestamogrupodev\repository\AlumnoRepository.class
+edu\pe\zegel\gestionarprestamogrupodev\controller\PrestamoController.class
+edu\pe\zegel\gestionarprestamogrupodev\repository\PrestamoRepository.class
+edu\pe\zegel\gestionarprestamogrupodev\service\PrestamoService.class
